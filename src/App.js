@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Pie} from 'react-chartjs-2';
 
@@ -43,7 +42,16 @@ function App() {
           }]
         }
       }
-        
+       options={{
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: ({ label, formattedValue }) =>
+                  label + ": " + formattedValue + "%",
+              },
+            },
+          },
+        }} 
       />
     </div>
   );
